@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const {register, login, getUser, logout} = require('./controllers/user');
+const {getProducts} = require('./controllers/products')
 const massive = require('massive');
 const session = require('express-session');
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -37,6 +38,8 @@ app.post('/api/auth/register', register);
 app.post('/api/auth/login', login);
 app.get('/api/auth/me', getUser);
 app.post('/api/auth/logout', logout);
+
+app.get('/api/products', getProducts);
 
 
 

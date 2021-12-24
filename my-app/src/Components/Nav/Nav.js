@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { updateUser, logout } from '../../redux/reducer'
+import { updateUser, logout, register } from '../../redux/reducer'
 import './Nav.css';
 
 
@@ -10,24 +10,7 @@ class Nav extends Component {
     constructor(props) {
         super(props);
 
-    this.logout = this.logout.bind(this);
-    this.getUser = this.getUser.bind(this);
-    }
 
-
-    componentDidMount() {
-    this.getUser()
-    }
-
-
-    getUser() {
-        axios.get('/api/auth/me')
-        .then( ({data}) => this.props.updateUser(data) )
-    }
-    
-    logout() {
-        axios.post('/api/auth/logout')
-        .then(_ => this.props.logout)
     }
 
 
@@ -38,11 +21,14 @@ class Nav extends Component {
     render(){
         return (
             <div className= 'nav'>
+                <h1 className='nav-title'>|MECH TECH SALES|</h1>
                 <div className= 'nav-profile-container'>
                     <div className= 'nav-profile-pic'>
-                        <img src='https://robohash.org/$%7Busername%7D.png' alt='Profile Picture' width="100" height="100"></img>
-                        <p className='nav-username'>Username</p>
-                        
+                        <img src='https://robohash.org/$%7Busername%7D.png' alt='Profile Pic' width="100" height="100"></img>
+                        <div className = 'login-container'>
+                        <button className = 'login-button'>Login</button>
+                        <button className='register-button'>Register</button>
+                        </div>
                     </div>
                 </div>
 

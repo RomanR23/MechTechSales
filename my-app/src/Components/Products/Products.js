@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Products.css'
 
 
 class Products extends Component {
@@ -18,7 +19,7 @@ class Products extends Component {
 
     render(){
         return (
-            <div>
+            <div className = 'all-products-container'>
                 <p>products must be showing</p>
             </div>
         )
