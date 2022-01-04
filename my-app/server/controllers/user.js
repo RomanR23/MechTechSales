@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
     register: async (req, res) => {
-        const { username, first_name, last_name, password } = req.body;
+        const { username, firstname, lastname, password } = req.body;
         const db = req.app.get('db');
         const result = await db.user.find_user_by_username([username]);
         const existingUser = result[0];
@@ -11,7 +11,7 @@ module.exports = {
         }
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const registeredUser = await db.user.create_user([ username, first_name, last_name, hash, 'https://robohash.org/${username}.png']);
+    const registeredUser = await db.user.create_user([ username, firstname, lastname, hash, 'https://robohash.org/${username}.png']);
     const user = registeredUser[0];
     req.session.user = { username: user.username, id: user.id };
     return res.status(201).send(req.session.user);
@@ -23,7 +23,7 @@ module.exports = {
         const result = await db.user.find_user_by_username([username]);
         const user = result[0];
         if(!user) {
-            return res.status(420).send("No such user.");
+            return res.status(201).send("No such user.");
         }
 
         const isAuthenticated = bcrypt.compareSync(password, user.password);

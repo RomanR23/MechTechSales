@@ -1,0 +1,64 @@
+.settings-container {
+    width: 100vw;
+    height:92.4vh;
+    margin-top: 100px;
+    background:linear-gradient(141deg, rgb(148, 148, 148) 25%, rgb(250, 250, 250) 40%, rgb(146, 146, 146) 55%);
+}
+
+.welcome-user {
+    margin-left:250px;
+    font-size: 80px;
+    width:80vw;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.username-text {
+    position: relative;
+    top:100px;
+}
+
+.settings {
+    position: relative;
+    margin-left:10vw;
+    top:10vh;
+    width:40vw;
+    margin-bottom:20px;
+
+
+}
+
+input{
+    height:3vh;
+    width:15vw;
+    font-size:40px;
+    
+}
+
+.container {
+    margin-top:80px;
+}
+
+.button-settings{
+    position: relative;
+    width:10%;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    padding: 4px 20px;
+    display: relative;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #000000;
+    margin-left:10px;
+    margin-top:10px;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    
+}
+
+.button-settings:hover {
+    box-shadow: inset 400px 0 0 0 #e9e9e9;
+    color: rgb(0, 0, 0);
+}

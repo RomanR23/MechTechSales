@@ -8,7 +8,7 @@
 }
 
 .nav-links {
-width: 38vw;
+width: 30vw;
 height:40px;
 display: flex;
 flex-direction: row;
@@ -42,11 +42,13 @@ margin-right:-50px;
 
 
 .nav-profile-container{
-width:220px;
-height:125px;
+width:350px;
+height:500px;
 float:right;
 margin-top:-24px;
 text-align: center;
+justify-content: center;
+
 }
 
 .nav-profile-pic{
@@ -123,3 +125,59 @@ top: -17px;
     box-shadow: inset 400px 0 0 0 #383838;
     color: white;
 }
+
+
+
+.dropdownlogin {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content-login {
+    display:none;
+    position: absolute;
+    z-index: 1;
+    margin-left:-250px;
+    margin-top:100px;
+  }
+
+
+  
+
+.dropdown-login-button {
+    position: relative;
+      margin-top:25px;
+}
+
+.dropdown-content-register {
+    display:none;
+    position: absolute;
+    z-index: 1;
+    margin-left:-250px;
+    margin-top:100px;
+  }
+
+  .dropdown-register-button {
+      position: relative;
+      margin-top:25px;
+  }
+  
+  .welcome-user-logout-container{
+      position: relative;
+      margin-top:-20px;
+      width:20vw;
+      color:white;
+
+  }
+
+  .welcome-text-logout{
+      position: relative;
+      float:left
+  }
+
+  .logout-button{
+    position: relative;
+    float:left;
+    margin-left:20px;
+    margin-top:16px;
+  }

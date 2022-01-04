@@ -1,6 +1,6 @@
 .Home-container {
     width: 100vw;
-    height:89.8vh;
+    height:92.4vh;
     margin-top: 100px;
     background:linear-gradient(141deg, rgb(148, 148, 148) 25%, rgb(250, 250, 250) 40%, rgb(146, 146, 146) 55%);
     overflow-x:hidden;
@@ -117,12 +117,14 @@
 .products-container {
     width: 1600px;
     height: 36vh;
-    margin-top:4px;
+    margin:0;
     display: flex;
+    flex-direction: column;
+    margin-left:auto;
+    margin-right:auto;
     justify-content: center;
     border:3px solid black;
-    margin-right:auto;
-    margin-left:auto;
+
     background-color: rgb(221, 225, 228);
     
     
@@ -150,9 +152,28 @@
 
 .featured-items {
 margin:0;
+height:5vh;
 }
 
 .preview-image-container {
     display: flex;
     justify-content: center;
+    margin-top:40px;
+}
+
+.featured-products {
+    width:20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product {
+    width:15vw;
+    margin-left:100px;
+
+}
+
+.product-image {
+    width:8vw;
 }

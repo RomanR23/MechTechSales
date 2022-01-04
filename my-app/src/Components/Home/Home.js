@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import './Home.css';
 
 
@@ -8,10 +8,34 @@ import './Home.css';
 class Home extends Component {
     constructor(props){
         super(props)
-        
+
         this.state = {
-            products: []
+            products: [],
         }
+        
+
+        this.getProdcuts = this.getProducts.bind(this);
+    }
+
+    componentDidMount(){
+       this.getProducts()
+
+    }
+
+    componentWillUnmount(){
+        this.getProducts()
+    }
+
+
+    getProducts(){
+        axios.get('/api/products')
+        .then( res  => {
+            this.setState({products: res.data})
+
+        }).catch( err => {
+            console.log(`Error:${err}`)
+        })
+
         
     }
 
@@ -20,6 +44,20 @@ class Home extends Component {
 
 
     render(){
+        let array = this.state.products.map((product, index) => {
+            
+            return <div className = 'product' key={index}> 
+                <img className = 'product-image' src= {product.product_image} alt='product-pic'/>
+                <sub className = 'product-name'>{product.product_name}</sub>
+            </div>
+            
+        })
+
+        let previewArr = [];
+         for (let i = 0; i < 4; i++){
+             previewArr.push(array[i]);
+         }
+
         return ( 
             <div className = 'Home-container'>
                 <div className='escape-container'>
@@ -32,7 +70,8 @@ class Home extends Component {
                 </div>
                 <div className = "products-container">
                     <h1 className='featured-items'>Featured Items</h1>
-                    <div className='featured-products'>{this.products}</div>
+                    <div className='featured-products'>{previewArr}</div>
+                    
 
                 </div>
                 <Link to='/products'><button className = 'more-items-button'>SHOP MORE ↓</button></Link>

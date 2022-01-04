@@ -5,11 +5,21 @@ const initialState = {
 
 export const UPDATE_USER = "UPDATE_USER"
 export const LOGOUT_USER = "LOGOUT_USER"
+export const REGISTER_USER = "REGISTER_USER"
 
 
 export const updateUser = (user) => (
     {
         type: UPDATE_USER,
+        payload: {
+            username: user.username,
+            profilePic: user.profile_pic
+        }
+    });
+
+export const registerUser = (user) => (
+    {
+        type: REGISTER_USER,
         payload: {
             username: user.username,
             profilePic: user.profile_pic
