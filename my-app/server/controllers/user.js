@@ -63,5 +63,16 @@ module.exports = {
             return res.status(404).send('Error, No User Logged In!');
         }
         
+    },
+    updateUsername: async (req,res) => {
+        const {username, user} = req.body
+        const db = req.app.get('db');
+        await db.user.updateUsername([username, user.id])
+        const updatedUser = await db.user.find_user_by_id([user.id])
+
+        
+        
+        
+        res.status(200).send(updatedUser)
     }
 }

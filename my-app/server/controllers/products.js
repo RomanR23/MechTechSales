@@ -12,18 +12,31 @@ module.exports = {
     },
 
     inputProduct: async (req,res)=> {
-        const { product_name , product_price , product_quantity, product_image } = req.body
+        const { id, product_name , product_price , product_quantity, product_image } = req.body
         const db = req.app.get('db')
         const date = new Date();
-        const { id } = req.session.user || 0
-        const newItem = await db.products.inputProduct([product_name , product_price , product_quantity, product_image, id, date]);
+        const { userid } = req.session.user || 0
+        const newItem = await db.products.inputProduct([id, product_name , product_price , product_quantity, product_image, userid, date]);
         res.status(200).send(newItem)
     },
 
     updateExistingProduct: async (req,res) => {
         const { id, product_quantity } = req.body
         const db = req.app.get('db')
-        const updatedProduct = await db.products.updateExistingProduct([ id, product_quantity])
+        const updatedProduct = await db.products.updateExistingProduct([product_quantity, id])
         res.status(200).send(updatedProduct)
+    },
+    deleteProductCheckout: async (req, res) => {
+        const {product_id} = req.body
+        const db = req.app.get('db')
+        await db.products.deleteProductCheckout([product_id])
+        
+        res.status(200).send('product deleted from data base!')
+        
+    },
+    clearCheckout: (req, res) => {
+        const db = req.app.get('db')
+        db.products.clearCheckout()
+        res.status(200).send('Checkout Cart Cleared!')
     }
 }

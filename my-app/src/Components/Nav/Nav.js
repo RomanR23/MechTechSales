@@ -26,17 +26,17 @@ class Nav extends Component {
     }
 
 
-    componentDidMount(){
-      this.getUser()
-      axios.get('/api/auth/me')
-      .then(res => {
-        console.log(res.data)
-        if(res.data){
-          this.setState({user:true})
-        }
-      })
+    // componentDidMount(){
+    //   this.getUser()
+    //   axios.get('/api/auth/me')
+    //   .then(res => {
+    //     console.log(res.data)
+    //     if(res.data){
+    //       this.setState({user:true})
+    //     }
+    //   })
 
-    }
+    // }
 
     getUser() {
       axios.get('/api/auth/me')

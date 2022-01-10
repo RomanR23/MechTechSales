@@ -9,6 +9,7 @@ CREATE TABLE site_users (
 
 CREATE TABLE site_cart(
 id SERIAL PRIMARY KEY,
+product_id INT REFERENCES site_products(id),
 product_name VARCHAR(50) NOT NULL,
 product_price DECIMAL,
 product_quantity INT,

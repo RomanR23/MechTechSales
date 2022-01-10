@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const {register, login, getUser, logout} = require('./controllers/user');
-const {getProducts, getCartItems, inputProduct, updateExistingProduct} = require('./controllers/products.js')
+const {register, login, getUser, logout, updateUsername} = require('./controllers/user');
+const {getProducts, getCartItems, inputProduct, updateExistingProduct, deleteProductCheckout, clearCheckout} = require('./controllers/products.js')
 const massive = require('massive');
 const session = require('express-session');
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -41,6 +41,9 @@ app.get('/api/auth/me', getUser);
 app.post('/api/auth/logout', logout);
 app.post('/api/inputProduct', inputProduct);
 app.post('/api/updateExistingProduct', updateExistingProduct);
+app.post('/api/deleteProductCheckout', deleteProductCheckout)
+app.post('/api/checkoutCart', clearCheckout)
+app.post('/api/updateUsername', updateUsername);
 
 
 

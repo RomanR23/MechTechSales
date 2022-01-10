@@ -1,110 +1,90 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Products.css'
 
 
-class Products extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            products: [],
-            cartItems: [],
-            
+function Products() {
 
-        }
-        
-        this.getProducts = this.getProducts.bind(this);
-        this.getCartItems = this.getCartItems.bind(this);
-        this.quantityInc = this.quantityInc.bind(this);
-        this.quantityDec = this.quantityDec.bind(this);
-        this.onAdd = this.onAdd.bind(this)
-    }
+const [products, setProducts] = useState([]);
+const [cartItems, setCartItems] = useState([]);
 
 
-    componentDidMount(){
-        this.getProducts()
-        this.getCartItems()
-        
- 
-    }
 
 
-    
+function getProducts(){
+    console.log('getProdcutsFired')
+    axios.get('/api/products')
+    .then( res => {
+        setProducts(res.data)
+    }).catch( err => {
+        console.log(`Error:${err}`)
+    })
+}
 
-     getProducts(){
-        axios.get('/api/products')
-        .then( res  => {
-            this.setState({products: res.data})
 
-        }).catch( err => {
-            console.log(`Error:${err}`)
-        })
 
-        
-    }
-
-    getCartItems(){
+    function getCartItems(){
+        console.log('getCartItemsFired')
         axios.get('/api/cartItems')
         .then( res => {
-            this.setState({ cartItems : res.data})
+            setCartItems(res.data)
         }).catch( err => {
             console.log(`Error:${err}`)
         })
     }
 
-    quantityInc = (product) => {
+    const quantityInc = (product) => {
         product.product_quantity += 1
-        let copy = [...this.state.products]
-        this.setState({ 
-            products: copy
-        })
+        console.log(product.id, product.product_quantity)
+        setProducts(current => [...current])
         let button = document.getElementsByClassName('AddToCart')
         if  (product.product_quantity > 0){
-            button[product.id - 1].style.display='inline-block'
+            button[product.id -1].style.display='inline-block'
             } 
         console.log(product, product.id)
-      }
+    }
 
 
-    quantityDec = (product) => {
+    const quantityDec = (product) => {
         if(product.product_quantity > 0){
-          product.product_quantity -= 1
-          let copy = [...this.state.products]
-            this.setState({ 
-            products: copy
-            })
+            product.product_quantity -= 1
+            setProducts(current => [...current])
 
         }
         let button = document.getElementsByClassName('AddToCart')
-      
+    
         if  (product.product_quantity === 0){
             button[product.id - 1].style.display='none'
             
             } 
-        console.log(product)
+        
         
     }
 
-    onAdd = (product) => {
+    const onAdd = (product) => {
         
-        const exist = this.state.cartItems.find(x => x.id === product.id);
+        const exist = cartItems.find(x => x.product_id === product.id);
 
-        
+
+
         if (exist){
-
+            console.log(exist)
+            
+            product.product_quantity += exist.product_quantity
+            
             axios.post('/api/updateExistingProduct', product)
-            .then(()=> 
+            .then(()=>{
+                getCartItems()
                 console.log('axios post updated checkout products')
-            )
-        }
-        
-          
+            })
+        } else {
             axios.post('/api/inputProduct', product)
             .then(()=> {
-                this.getCartItems()
+                getCartItems()
                 console.log('axios input Product added')
             })
+        }
         
 
 
@@ -122,18 +102,10 @@ class Products extends Component {
     
 
 
-
-
-
-    render(){
-        const {cartItems} = this.state;
-        const itemsPrice = cartItems.reduce((a,c)=> a + c.price * c.price, 0)
-        const totalPrice = itemsPrice;
-
-        let array = this.state.products.map((product, index) => {
+    let array = products.map((product, index) => {
             
-            return <div className = 'product' key={index}> 
-                <img className = 'product-image' src= {product.product_image} alt='bro'/>
+    return <div className = 'product' key={index}> 
+                <img className = 'product-image' src= {product.product_image} alt='product-i'/>
 
                 <sub className = 'product-name'>{product.product_name} 
                 
@@ -145,21 +117,30 @@ class Products extends Component {
 
                 <div className ="product-button-container">
 
-                <button className="quantity-" onClick={()=> this.quantityDec(product)}>Quantity -</button>
+                <button className="quantity-" onClick={()=> quantityDec(product)}>Quantity -</button>
 
                 <div className ="quantityCounter">{product.product_quantity}</div>
                 
-                <button className="quantity+" onClick={()=> this.quantityInc(product)}>Quantity +</button>
+                <button className="quantity+" onClick={()=> quantityInc(product)}>Quantity +</button>
 
                 </div>
 
-                <button className="AddToCart" onClick = {()=> this.onAdd(product)}>Add To Cart</button>
+                <button className="AddToCart" onClick = {()=> onAdd(product)}>Add To Cart</button>
                 
 
 
             </div>
             
         })
+
+
+    useEffect(()=> {
+        getCartItems()
+        getProducts()
+        console.log(cartItems)
+    },[])
+
+
 
 
 
@@ -170,7 +151,7 @@ class Products extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default Products;

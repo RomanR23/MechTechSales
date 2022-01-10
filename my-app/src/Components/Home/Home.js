@@ -17,14 +17,7 @@ class Home extends Component {
         this.getProdcuts = this.getProducts.bind(this);
     }
 
-    componentDidMount(){
-       this.getProducts()
-
-    }
-
-    componentWillUnmount(){
-        this.getProducts()
-    }
+    
 
 
     getProducts(){
