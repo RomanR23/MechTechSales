@@ -1,64 +1,61 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import './Checkout.css'
 import axios from 'axios';
+
 
 
 
 function Checkout(){
 
 const [ cartItems, setCartItems ] = useState([]);
-const [ cartPrice, setCartPrice ] = useState([]);
+
+const history = useHistory();
 
 
+function getCartItems(){
+  axios.get('/api/cartItems')
+    .then( res => {
+      setCartItems(res.data)
+    }).catch( err => {
+      console.log(`Error:${err}`)
+    })
+}
+
+  const checkoutInc = (product) => {
+    product.product_quantity += 1
+    axios.post('/api/updateExistingProductCheckout', product)
+    .then(_ => {
+      setCartItems(current => [...current])
+    })
+    
+    }
+
+  const checkoutDec = (product) => {
+    if(product.product_quantity > 1){
+      product.product_quantity -= 1
+    axios.post('/api/updateExistingProductCheckout', product)
+    .then(_ => {
+      setCartItems(current => [...current])
+    })
+    }
 
 
-  // const checkoutInc = (product) => {
-  //       const exist = this.cartItems.find((x) => x.id === product.id);
-      
-  //       if(exist){
-  //         this.setState({ cartItems:
-  //           this.cartItems.map((x) =>
-  //             x.id === product.id ? { ...exist, quantity: exist.quantity += 1 } : x
-  //           )
-  //         });
-  //       }
-  //   }
-
-  // const checkoutDec = (product) => {
-  //       const exist = this.cartItems.find((x) => x.id === product.id);
-        
-      
-  //       if(exist && product.quantity > 0){
-  //         this.setState({ cartItems:
-  //           this.cartItems.map((x) =>
-  //             x.id === product.id ? { ...exist, quantity: exist.quantity -= 1 } : x
-  //           )
-  //         });
-  //       }
-  //       if(exist && product.quantity === 0){
-  //         let copy = this.cartItems;
-  //         copy.splice(copy.indexOf(product), 1)
-  //         this.setState({ cartItems:
-  //           this.cartItems.map((x) =>
-  //             x.id === product.id ? { copy } : x
-  //           )
-  //         });
-  //       }
-  //   }
+    }
 
 
   const checkoutClear = () => {
-  axios.post('/api/checkoutCart')
+  axios.delete('/api/checkoutCart')
   .then(_ => {
     alert("Items Purchased! Please Come Again!")
-    console.log('checkoutClear fired')
+    history.push('/')
   })
   }
 
 
   const checkoutRemove = (product) => {
           axios.post('/api/deleteProductCheckout', product)
-          .then(_ => console.log('checkoutremove api hit!'))
+          .then(_ => getCartItems())
         
         console.log(product)
   }
@@ -69,16 +66,17 @@ const [ cartPrice, setCartPrice ] = useState([]);
 
           <div className="logo-product-checkout">
 
-            <img className="product-image-checkout"src={product.product_image} alt="product-image"></img>
-            <sub>{product.product_name}</sub>
+            <img className="product-image-checkout"src={product.product_image} alt="product"></img>
+            <p className='product-checkout-p'>{product.product_name}</p>
 
           </div>
 
           <div className="product-counter-checkout">
-            <button className="product-quantity-button">-</button>
+            <button className="product-quantity-button" onClick={()=> checkoutDec(product)}>-</button>
             <div>{product.product_quantity}</div>
-            <button className="product-quantity-button">+</button>
-            <button className="remove-item" onClick = {() => checkoutRemove(product)}>Remove Item</button>
+            <button className="product-quantity-button" onClick={()=> checkoutInc(product)}>+</button>
+            <button className="remove-item-button" onClick = {() => checkoutRemove(product)}>Remove Item</button>
+            
           </div>
             
 
@@ -89,20 +87,18 @@ const [ cartPrice, setCartPrice ] = useState([]);
 
 
   useEffect(()=> {
-    axios.get('/api/cartItems')
-    .then( res => {
-      setCartItems(res.data)
-    }).catch( err => {
-      console.log(`Error:${err}`)
-    })
-  })
+   getCartItems()
+  },[])
 
 
 
 
 return (
-            <div className = "Checkout-container">
-                <p className="welcome-to-checkout">Welcome to Checkout, Roman!</p>
+            <div className = "checkout-container">
+              <div>
+              <p className="welcome-to-checkout">Welcome to Checkout!</p>
+              </div>
+              
 
                 <div className="checkout-products-container">
                     
@@ -114,10 +110,16 @@ return (
 
 
                     <div className="checkout-price-container">
-                        <h1>Shopping Cart Total</h1>
-                        <p>Shipping Cost: * FREE PROMO *</p>
-                        <p>Cart Total: {itemsPrice.toFixed(2)}</p>
-                        <button onClick ={()=> checkoutClear()}>Checkout & Pay</button>
+                      <div className='shopping-cart-box'>
+                      <h1>Shopping Cart Total</h1>
+                      <p><b>Shipping Cost:</b> * FREE PROMO *</p>
+                      </div>
+                        
+                        <div className='checkout-pay-box'>
+                        <p><b>Cart Total:</b> ${itemsPrice.toFixed(2)}</p>
+                        <button className='checkout-pay-button' onClick ={()=> checkoutClear()}>Checkout & Pay</button>
+                        </div>
+                        
 
                     </div>
 

@@ -14,11 +14,13 @@ module.exports = {
     const registeredUser = await db.user.create_user([ username, firstname, lastname, hash, 'https://robohash.org/${username}.png']);
     const user = registeredUser[0];
     req.session.user = { username: user.username, id: user.id };
+    console.log(req.session)
     return res.status(201).send(req.session.user);
     },
 
     login: async (req, res) => {
         const { username, password } = req.body;
+        console.log(username,password)
         const db = req.app.get('db');
         const result = await db.user.find_user_by_username([username]);
         const user = result[0];
@@ -69,10 +71,31 @@ module.exports = {
         const db = req.app.get('db');
         await db.user.updateUsername([username, user.id])
         const updatedUser = await db.user.find_user_by_id([user.id])
+        res.status(200).send(updatedUser)
+    },
 
-        
-        
-        
+    updateFirstname: async (req, res) => {
+        const {firstname, user} = req.body
+        const db = req.app.get('db');
+        await db.user.updateFirstname([firstname,user.id])
+        const updatedUser = await db.user.find_user_by_id([user.id])
+        res.status(200).send(updatedUser)
+    },
+    updateLastname: async (req, res) => {
+        const {lastname, user} = req.body
+        const db = req.app.get('db');
+        await db.user.updateLastname([lastname,user.id])
+        const updatedUser = await db.user.find_user_by_id([user.id])
+        res.status(200).send(updatedUser)
+    },
+    updatePassword: async (req, res) => {
+        const {password, user} = req.body
+        const db = req.app.get('db');
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+        await db.user.updatePassword([hash,user.id])
+        console.log(hash, password)
+        const updatedUser = await db.user.find_user_by_id([user.id])
         res.status(200).send(updatedUser)
     }
 }

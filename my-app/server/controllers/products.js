@@ -23,8 +23,8 @@ module.exports = {
     updateExistingProduct: async (req,res) => {
         const { id, product_quantity } = req.body
         const db = req.app.get('db')
-        const updatedProduct = await db.products.updateExistingProduct([product_quantity, id])
-        res.status(200).send(updatedProduct)
+        await db.products.updateExistingProduct([product_quantity, id])
+        res.status(200).send("product updated!")
     },
     deleteProductCheckout: async (req, res) => {
         const {product_id} = req.body
@@ -38,5 +38,11 @@ module.exports = {
         const db = req.app.get('db')
         db.products.clearCheckout()
         res.status(200).send('Checkout Cart Cleared!')
+    },
+    updateExistingProductCheckout: async (req,res) => {
+        const { product_id, product_quantity } = req.body
+        const db = req.app.get('db')
+        await db.products.updateExistingProduct([product_quantity, product_id])
+        res.status(200).send("product updated!")
     }
 }
