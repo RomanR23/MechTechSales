@@ -96,7 +96,7 @@ function getProducts(){
                 <img className = 'product-image-products' src= {product.product_image} alt='product-i'/>
                 </div>
 
-                <div className = 'product-name-prodcuts'>{product.product_name} </div>
+                <div className = 'product-name-products'>{product.product_name} </div>
                 
                 <div className ="product-price-products">{`$${product.product_price}`}</div>
                 

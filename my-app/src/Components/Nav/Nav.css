@@ -12,8 +12,6 @@
 }
 
 .nav-links {
-width:30vw;
-height:40px;
 display: flex;
 flex-direction: row;
 margin-top:35px;
@@ -26,7 +24,7 @@ margin-top:35px;
     border-radius: 0px;
     padding: 12px 34px;
     display: inline-block;
-    margin-left:40px;
+    margin-left:10px;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 12px;
     letter-spacing: 1px;
@@ -85,7 +83,7 @@ margin-top:-30px;
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 0px;
-    padding: 2px 6px;
+    padding: 2px 2px;
     display: inline-block;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 12px;
@@ -139,4 +137,161 @@ margin-top:-30px;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
+}
+
+@media(max-width:1350px){
+    .nav-title{
+        font-size:40px;
+    
+    }
+}
+
+@media(max-width:1250px){
+    .nav-title{
+        font-size:30px;
+        margin-top:30px;
+    }
+}
+
+@media(max-width:1160px){
+    .nav-title{
+        font-size:25px;
+        margin-top:40px;
+    }
+
+    .nav-button{
+        width:11vw;
+        font-size: 12px;
+        
+    }
+
+}
+
+@media(max-width:1120px){
+    .nav-title{
+        font-size:23px;
+        margin-top:40px;
+    }
+    .nav-button{
+        font-size:11px;
+    }
+}
+
+
+
+
+@media (max-width:1000px){
+    .nav-title{
+        font-size:20px;
+        text-align: center;
+        margin-top:20px;
+    }
+
+    .nav-links{
+        margin-top: 45px;
+        width:55vw;
+        height:4vh;
+    
+    }
+
+    .nav-button {
+        width:12vw;
+        height:20px;
+        font-size:13px;
+        padding:0;
+        margin-left:5px;
+        text-align: center;
+
+        }
+
+    .nav-profile-pic {
+        width:8vw;
+        height:6vh;
+        margin-top:8px;
+    }
+
+    .nav-profile-container{
+        width:20vw;
+
+        
+    }
+
+    .login-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media(max-width:780px){
+    .nav-button{
+        font-size: 11px;
+    }
+}
+
+@media(max-width:570px){
+    .nav-button{
+        font-size: 9px;
+    }
+}
+
+@media(max-width:520px){
+    .nav-links{
+        flex-direction: row;
+        margin-top: 43px;
+        width:65vw;
+        height:4vh;
+        flex-wrap: wrap;
+    }
+    .nav-button{
+        font-size: 9px;
+        width:16vw;
+    }
+}
+
+
+
+@media (max-width: 360px){
+    .nav-title{
+        font-size:15px;
+        width:30vw;
+        text-align: center;
+        margin-top:15px;
+    }
+
+    .nav-links{
+        flex-direction: row;
+        margin-top: 47px;
+        width:36vw;
+        height:4vh;
+        flex-wrap: wrap;
+    }
+
+    .nav-button {
+        width:17.5vw;
+        height:20px;
+        font-size:10px;
+        padding:0;
+        margin-left:1px;
+        margin-top:3px;
+        text-align: center;
+
+        }
+
+    .nav-profile-pic {
+        width:16vw;
+        height:8vh;
+        margin-top:8px;
+    }
+
+    .nav-profile-container{
+        width:24vw;
+        
+    }
+
+    .login-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

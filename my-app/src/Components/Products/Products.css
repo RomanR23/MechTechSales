@@ -10,20 +10,18 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    margin-top:100px;
+    margin-top:170px;
+    gap: 20px;
 }
 
 .indv-product-div{
-    height:38vh;
-    width: 15vw;
+    height:36vh;
+    width: 14vw;
     display: flex;
-    margin-left:10px;
-    margin-right:10px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin-top:40px;
     outline: 2px solid black;
 }
 
@@ -38,6 +36,8 @@
 
 .product-name-products{
     position: relative;
+    text-align: center;
+    width:12vw;
     
 }
 
@@ -58,6 +58,7 @@
     border: 2px solid rgb(0, 0, 0);
     padding: 4px 20px;
     display: relative;
+    
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 16px;
     letter-spacing: 1px;
@@ -68,9 +69,74 @@
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .indv-quantity:hover {
     box-shadow: inset 400px 0 0 0 rgb(97, 97, 55);
     color: white;
+}
+
+
+@media (max-width:1700px){
+    .indv-product-div{
+        height:34vh;
+    }
+    
+    .products-all-return{
+        margin-top:220px;
+    }
+
+    .product-image-products{
+        width:10vw;
+    }
+
+    .product-name-products{
+        font-size: 16px;
+        width:14vw;
+    }
+}
+
+@media(max-width:1100px){
+    .indv-product-div{
+        width:20vw;
+        height:27vh;
+    }
+
+    .products-all-return{
+        margin-top:115px;
+    }
+}
+
+@media(max-width:690px){
+    .indv-quantity{
+        width:1vw;
+        height:2vh;
+        text-align: center;
+    }
+
+    .indv-product-button-container{
+        flex-direction: column;
+    }
+
+    .quantityCounter{
+        text-align: center;
+    }
+
+    .product-name-products{
+        font-size:14px;
+    }
+}
+
+@media(max-width:450px){
+    .product-name-products{
+        font-size:10px;
+    }
+
+    .indv-quantity{
+        height:2vh;
+    }
 }

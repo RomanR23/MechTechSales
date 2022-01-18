@@ -44,12 +44,34 @@ function getCartItems(){
     }
 
 
-  const checkoutClear = () => {
+  function checkoutClear(){
   axios.delete('/api/checkoutCart')
   .then(_ => {
-    alert("Items Purchased! Please Come Again!")
-    history.push('/')
+    console.log('checkout cleared')
+    
   })
+  }
+
+  function checkoutPay(){
+    const mappedCartItems = cartItems.map( item => { return { id: item.product_id, quantity: item.product_quantity}})
+    fetch('/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        items: mappedCartItems
+      })
+    }).then(res => {
+      if(res.ok) return res.json()
+      return res.json().then(json => Promise.reject(json))
+    }).then(({url}) =>{
+      window.location = url
+    }).catch( e => {
+      console.log(e.error)
+    })
+
+    checkoutClear()
   }
 
 
@@ -104,25 +126,19 @@ return (
                     
                     <div className="checkout-products">
                         {cartArray}
-                        
-                    </div>
-                
+                </div>
 
-
-                    <div className="checkout-price-container">
-                      <div className='shopping-cart-box'>
-                      <h1>Shopping Cart Total</h1>
+                  <div className="checkout-price-container">
+                    <div className='shopping-cart-box'>
+                      <h1 className='shopping-cart-total-h1'>Shopping Cart Total</h1>
                       <p><b>Shipping Cost:</b> * FREE PROMO *</p>
-                      </div>
-                        
-                        <div className='checkout-pay-box'>
-                        <p><b>Cart Total:</b> ${itemsPrice.toFixed(2)}</p>
-                        <button className='checkout-pay-button' onClick ={()=> checkoutClear()}>Checkout & Pay</button>
-                        </div>
-                        
-
                     </div>
-
+                        
+                      <div className='checkout-pay-box'>
+                        <p><b>Cart Total:</b> ${itemsPrice.toFixed(2)}</p>
+                        <button className='checkout-pay-button' id="button" onClick ={()=> checkoutPay()}>Checkout & Pay</button>
+                      </div>
+                  </div>
                 </div>
             </div>
         )

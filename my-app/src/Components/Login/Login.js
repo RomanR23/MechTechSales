@@ -20,6 +20,7 @@ function login() {
         .then(res => {
         if(res.data.username){
                 history.push('/')
+                document.location.reload()
         }
         })
         .catch(err => {
@@ -40,7 +41,7 @@ function login() {
                 <div className = 'login-auth-container'>
                         <div className='login-auth-box'>
                         <h1 className ='login-login-text'>Welcome, Login Here!</h1>
-                        <div>
+                        <div className='input-mobile-box'>
                         <input value={username} onChange={(e) => setUsername(e.target.value)} className="login-username-input" placeholder ="Username"></input>
                         <input value={password} onChange={(e) => setPassword(e.target.value)} className="login-password-input" placeholder ="Password"></input>
                         </div>

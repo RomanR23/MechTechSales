@@ -120,7 +120,7 @@ useEffect(() => {
                 </div>
                 
                 <div className="user-logged-info">
-                <h1>{`Hello, ${user.first_name || "Guest! Please Log In First"}!`}</h1>
+                <h1 className='guest-h1'>{`Hello, ${user.first_name || "Guest! Please Log In First"}!`}</h1>
                 <p><b>Current User Info</b></p>
                 <p><b>User name:</b>{user.username}</p>
                 <p><b>First name:</b>{user.first_name}</p>

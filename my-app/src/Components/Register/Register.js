@@ -21,6 +21,7 @@ function Register(){
             alert('You Have Been Registered Successfully!')
             if(res.data.username){
                 history.push('/')
+                document.location.reload()
             }
         })
         .catch(err => {

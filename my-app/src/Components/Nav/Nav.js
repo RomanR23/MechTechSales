@@ -61,8 +61,8 @@ function getUser(){
 
 
                 <div className= 'nav-profile-container'>
-                    <div className= 'nav-profile-pic'>
-                        <img src='https://robohash.org/$%7Busername%7D.png' alt='Profile Pic' width="100" height="100"></img>
+                    <div>
+                        <img className='nav-profile-pic'src='https://robohash.org/$%7Busername%7D.png' alt='Profile Pic' width="100" height="100"></img>
                           </div>
                                 {!user
                                     ?
