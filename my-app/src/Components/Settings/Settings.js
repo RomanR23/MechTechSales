@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import axios from 'axios';
 import './Settings.css'
 
@@ -6,11 +7,14 @@ import './Settings.css'
 
 function Settings(){
 
+
 const [username, setUsername] = useState("");
 const [firstname, setFirstname] = useState("");
 const [lastname, setLastname] = useState("");
 const [password, setPassword] = useState("");
 const [user, setUser] = useState([]);
+
+const history = useHistory();
 
 function userLogged(){
     axios.get('/api/auth/me')
@@ -27,8 +31,10 @@ function updateUsername(){
         axios.post('/api/updateUsername', {username, user})
         .then(res =>{
             alert("Please Re-Log To Apply Changes!")
-            setUser(res.data)
             setUsername("")
+            history.push('/')
+            document.location.reload()
+
         }).catch(err => {
             console.log(`Error: ${err}`)
         })

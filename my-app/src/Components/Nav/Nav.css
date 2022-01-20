@@ -18,6 +18,7 @@ margin-top:35px;
 
 }
 
+
 .nav-button {
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
@@ -47,7 +48,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top:-30px;
+margin-top:-25px;
+}
+
+.nav-profile-pic{
+    display: flex;
+    justify-content: center;
+    
 }
 
 
@@ -205,7 +212,7 @@ margin-top:-30px;
         }
 
     .nav-profile-pic {
-        width:8vw;
+        width:7vw;
         height:6vh;
         margin-top:8px;
     }
@@ -233,25 +240,40 @@ margin-top:-30px;
     .nav-button{
         font-size: 9px;
     }
+
+    .nav-links{
+        flex-direction: row;
+        margin-top: 41px;
+        width:40vw;
+        flex-wrap: wrap;
+    }
+
+    .nav-button{
+        font-size: 9px;
+        width:15vw;
+    }
+
 }
 
 @media(max-width:520px){
-    .nav-links{
-        flex-direction: row;
-        margin-top: 43px;
-        width:65vw;
-        height:4vh;
-        flex-wrap: wrap;
-    }
     .nav-button{
         font-size: 9px;
         width:16vw;
     }
+
+    .nav-profile-pic {
+        width:11vw;
+        height:6vh;
+        margin-top:6.5px;
+    }
 }
 
+@media (max-width:500px){
+    .nav-button{
+        font-size: 8.5px;
+        width:14vw;
+    }
 
-
-@media (max-width: 360px){
     .nav-title{
         font-size:15px;
         width:30vw;
@@ -260,9 +282,23 @@ margin-top:-30px;
     }
 
     .nav-links{
+        justify-content: center;
+    }
+}
+
+@media(max-width: 460px){
+    .nav-button{
+        font-size: 8.5px;
+        width:16vw;
+    }
+}
+
+
+@media (max-width: 360px){
+    .nav-links{
         flex-direction: row;
-        margin-top: 47px;
-        width:36vw;
+        margin-top: 46px;
+        width:38vw;
         height:4vh;
         flex-wrap: wrap;
     }
@@ -270,7 +306,7 @@ margin-top:-30px;
     .nav-button {
         width:17.5vw;
         height:20px;
-        font-size:10px;
+        font-size:9px;
         padding:0;
         margin-left:1px;
         margin-top:3px;
@@ -280,8 +316,8 @@ margin-top:-30px;
 
     .nav-profile-pic {
         width:16vw;
-        height:8vh;
-        margin-top:8px;
+        height:6vh;
+        margin-top:15px;
     }
 
     .nav-profile-container{
@@ -293,5 +329,17 @@ margin-top:-30px;
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+
+    .login-button{
+        width:17.5vw;
+        height:20px;
+        font-size:9px;
+    }
+
+    .register-button{
+        width:17.5vw;
+        height:20px;
+        font-size:9px;
     }
 }

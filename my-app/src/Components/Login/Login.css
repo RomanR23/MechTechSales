@@ -56,10 +56,12 @@
 .login-username-input{
     margin-right:5px;
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 .login-password-input{
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 @media(max-width:1300px){

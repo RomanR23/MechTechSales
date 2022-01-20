@@ -10,14 +10,13 @@ function Register(){
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [password, setPassword] = useState("")
-    const [user, setUser] = useState([])
 
     const history = useHistory();
 
     function register() {
         axios.post('/api/auth/register', {username, firstname, lastname, password})
         .then(res => {
-            setUser(res.data)
+            
             alert('You Have Been Registered Successfully!')
             if(res.data.username){
                 history.push('/')
@@ -26,7 +25,6 @@ function Register(){
         })
         .catch(err => {
             console.log(err)
-            this.setState({errorMsg: 'Username taken!'})
         })
     }
     

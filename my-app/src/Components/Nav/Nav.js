@@ -16,6 +16,7 @@ function logout(){
     .then(_ => {
       alert("You Have Been Logged Out!")
       setUser(false)
+      document.location.reload()
     }).catch(err => {
     console.log(`Error: ${err}`)
     })

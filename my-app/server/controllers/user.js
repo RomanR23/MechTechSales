@@ -70,8 +70,7 @@ module.exports = {
         const {username, user} = req.body
         const db = req.app.get('db');
         await db.user.updateUsername([username, user.id])
-        const updatedUser = await db.user.find_user_by_id([user.id])
-        res.status(200).send(updatedUser)
+        res.sendStatus(200)
     },
 
     updateFirstname: async (req, res) => {

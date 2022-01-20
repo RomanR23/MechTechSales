@@ -22,10 +22,12 @@ function login() {
                 history.push('/')
                 document.location.reload()
         }
+        else {
+                alert('Username or Password Incorrect!')
+        }
         })
         .catch(err => {
                 console.log(err)
-                alert('Username or Password Incorrect!')
         })
         
 }

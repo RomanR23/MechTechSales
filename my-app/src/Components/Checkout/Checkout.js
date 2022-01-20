@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router';
+
 import './Checkout.css'
 import axios from 'axios';
 
@@ -10,7 +10,6 @@ function Checkout(){
 
 const [ cartItems, setCartItems ] = useState([]);
 
-const history = useHistory();
 
 
 function getCartItems(){

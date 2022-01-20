@@ -30,25 +30,30 @@
 .register-input-box{
     display: flex;
     flex-direction: column;
+    
 }
 
 .register-username-input{
     margin-bottom:5px;
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 .register-firstname-input{
     margin-bottom:5px;
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 .register-lastname-input{
     margin-bottom:5px;
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 .register-password-input{
     outline: 1.5px solid black;
+    height:4vh;
 }
 
 .register-auth-button{
