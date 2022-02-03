@@ -1,162 +1,165 @@
-.login-auth-container{
-    display: flex;
-    justify-content: center;
-    width:100vw;
-    height:100vh;
-    overflow-y: hidden;
-    background:linear-gradient(141deg, rgb(148, 148, 148) 25%, rgb(250, 250, 250) 40%, rgb(146, 146, 146) 55%);
+.login-auth-container {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: hidden;
+	background: linear-gradient(
+		141deg,
+		rgb(148, 148, 148) 25%,
+		rgb(250, 250, 250) 40%,
+		rgb(146, 146, 146) 55%
+	);
 }
 
-.login-auth-box{
-    background-color: rgb(55, 54, 54);
-    margin-top:260px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 38vw;
-    height:60vh;
-    outline: 3px solid black;
+.login-auth-box {
+	background-color: rgb(55, 54, 54);
+	margin-top: 260px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	width: 38vw;
+	height: 60vh;
+	outline: 3px solid black;
 }
 
-.login-auth-button-container{
-    display: flex;
-    justify-content: center;
+.login-auth-button-container {
+	display: flex;
+	justify-content: center;
 }
 
 .login-auth-button {
-    width:10vw;
-    height:4vh;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
-    display: relative;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 #000000;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
+	width: 10vw;
+	height: 4vh;
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(0, 0, 0);
+	display: relative;
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 16px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #000000;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
 }
 
 .login-auth-button:hover {
-    box-shadow: inset 400px 0 0 0 #000000;
-    color: rgb(255, 255, 255);
+	box-shadow: inset 400px 0 0 0 #000000;
+	color: rgb(255, 255, 255);
 }
 
-.login-login-text{
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 40px;
-    width:35vw;
-    color: white;
-    text-align: center;
+.login-login-text {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 40px;
+	width: 35vw;
+	color: white;
+	text-align: center;
 }
 
-.login-username-input{
-    margin-right:5px;
-    outline: 1.5px solid black;
-    height:4vh;
+.login-username-input {
+	margin-right: 5px;
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-.login-password-input{
-    outline: 1.5px solid black;
-    height:4vh;
+.login-password-input {
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-@media(max-width:1300px){
-    .input-mobile-box{
-        display: flex;
-        flex-direction: column;
-        gap:20px;
-    }
+@media (max-width: 1300px) {
+	.input-mobile-box {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
 
-    .login-username-input{
-        font-size:30px;
-    }
-    
-    .login-password-input{
-        font-size:30px;
-    }
+	.login-username-input {
+		font-size: 30px;
+	}
 
-    .login-auth-button{
-        width:15vw;
-    }
+	.login-password-input {
+		font-size: 30px;
+	}
 
-    .login-auth-box{
-        width:50vw;
-    }
+	.login-auth-button {
+		width: 15vw;
+	}
 
-    .login-login-text{
-        font-size:28px;
-    }
+	.login-auth-box {
+		width: 50vw;
+	}
+
+	.login-login-text {
+		font-size: 28px;
+	}
 }
 
-@media(max-width:1000px){
-    .login-username-input{
-        font-size:25px;
-        width:18vw;
-    }
-    
-    .login-password-input{
-        font-size:25px;
-        width:18vw;
-    }
+@media (max-width: 1000px) {
+	.login-username-input {
+		font-size: 25px;
+		width: 18vw;
+	}
 
-    .login-auth-button{
-        width:18vw;
-    }
+	.login-password-input {
+		font-size: 25px;
+		width: 18vw;
+	}
 
-    .login-auth-box{
-        width:60vw;
-    }
+	.login-auth-button {
+		width: 18vw;
+	}
 
-    .login-login-text{
-        font-size:22px;
-        width:80vw;
-    }
+	.login-auth-box {
+		width: 60vw;
+	}
+
+	.login-login-text {
+		font-size: 22px;
+		width: 80vw;
+	}
 }
 
-@media(max-width:650px){
-    .login-login-text{
-        font-size:20px;
-    }
-    .login-auth-box{
-        width:70vw;
-    }
+@media (max-width: 650px) {
+	.login-login-text {
+		font-size: 20px;
+	}
+	.login-auth-box {
+		width: 70vw;
+	}
 
-    .login-username-input{
-        font-size:25px;
-        width:24vw;
-    }
-    
-    .login-password-input{
-        font-size:25px;
-        width:24vw;
-    }
+	.login-username-input {
+		font-size: 25px;
+		width: 24vw;
+	}
 
-    .login-auth-button{
-        width:26vw;
-    }
+	.login-password-input {
+		font-size: 25px;
+		width: 24vw;
+	}
+
+	.login-auth-button {
+		width: 26vw;
+	}
 }
 
-@media(max-width:500px){
+@media (max-width: 500px) {
+	.login-login-text {
+		font-size: 20px;
+	}
+	.login-username-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 
-    .login-login-text{
-        font-size:20px;
+	.login-password-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 
-    }
-    .login-username-input{
-        font-size:20px;
-        width:28vw;
-    }
-    
-    .login-password-input{
-        font-size:20px;
-        width:28vw;
-    }
-
-    .login-auth-box{
-        width:80vw;
-    }
+	.login-auth-box {
+		width: 80vw;
+	}
 }

@@ -1,216 +1,218 @@
-
-.register-auth-container{
-    display: flex;
-    justify-content: center;
-    width:100vw;
-    height:100vh;
-    overflow-y: hidden;
-    background:linear-gradient(141deg, rgb(148, 148, 148) 25%, rgb(250, 250, 250) 40%, rgb(146, 146, 146) 55%);
+.register-auth-container {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	overflow-y: hidden;
+	background: linear-gradient(
+		141deg,
+		rgb(148, 148, 148) 25%,
+		rgb(250, 250, 250) 40%,
+		rgb(146, 146, 146) 55%
+	);
 }
 
-.register-auth-box{
-    background-color: rgb(55, 54, 54);
-    margin-top:260px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 38vw;
-    height:60vh;
-    outline: 3px solid black;
+.register-auth-box {
+	background-color: rgb(55, 54, 54);
+	margin-top: 260px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	width: 38vw;
+	height: 60vh;
+	outline: 3px solid black;
 }
 
-.register-auth-text{
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 40px;
-    color: white;
-    text-align: center;
+.register-auth-text {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 40px;
+	color: white;
+	text-align: center;
 }
 
-.register-input-box{
-    display: flex;
-    flex-direction: column;
-    
+.register-input-box {
+	display: flex;
+	flex-direction: column;
 }
 
-.register-username-input{
-    margin-bottom:5px;
-    outline: 1.5px solid black;
-    height:4vh;
+.register-username-input {
+	margin-bottom: 5px;
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-.register-firstname-input{
-    margin-bottom:5px;
-    outline: 1.5px solid black;
-    height:4vh;
+.register-firstname-input {
+	margin-bottom: 5px;
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-.register-lastname-input{
-    margin-bottom:5px;
-    outline: 1.5px solid black;
-    height:4vh;
+.register-lastname-input {
+	margin-bottom: 5px;
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-.register-password-input{
-    outline: 1.5px solid black;
-    height:4vh;
+.register-password-input {
+	outline: 1.5px solid black;
+	height: 4vh;
 }
 
-.register-auth-button{
-    width:10vw;
-    height:4vh;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
-    display: relative;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 #000000;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
+.register-auth-button {
+	width: 10vw;
+	height: 4vh;
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(0, 0, 0);
+	display: relative;
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 16px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #000000;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
 }
 
 .register-auth-button:hover {
-    box-shadow: inset 400px 0 0 0 #000000;
-    color: rgb(255, 255, 255);
+	box-shadow: inset 400px 0 0 0 #000000;
+	color: rgb(255, 255, 255);
 }
 
-@media(max-width:1400px){
-    .register-auth-box{
-        width:50vw;
-    }
+@media (max-width: 1400px) {
+	.register-auth-box {
+		width: 50vw;
+	}
 
-    .register-username-input{
-        font-size:30px;
-    }
+	.register-username-input {
+		font-size: 30px;
+	}
 
-    .register-firstname-input{
-        font-size:30px;
-    }
+	.register-firstname-input {
+		font-size: 30px;
+	}
 
-    .register-lastname-input{
-        font-size:30px;
-    }
+	.register-lastname-input {
+		font-size: 30px;
+	}
 
-    .register-password-input{
-        font-size:30px;
-    }
+	.register-password-input {
+		font-size: 30px;
+	}
 
-    .register-auth-button{
-        width:12vw;
-    }
+	.register-auth-button {
+		width: 12vw;
+	}
 }
 
-@media(max-width:1170px){
-    .register-auth-box{
-        width:60vw;
-    }
-    .register-auth-text{
-        font-size:30px;
-    }
-    .register-auth-button{
-        width:14vw;
-    }
+@media (max-width: 1170px) {
+	.register-auth-box {
+		width: 60vw;
+	}
+	.register-auth-text {
+		font-size: 30px;
+	}
+	.register-auth-button {
+		width: 14vw;
+	}
 
-    .register-username-input{
-        font-size:26px;
-    }
+	.register-username-input {
+		font-size: 26px;
+	}
 
-    .register-firstname-input{
-        font-size:26px;
-    }
+	.register-firstname-input {
+		font-size: 26px;
+	}
 
-    .register-lastname-input{
-        font-size:26px;
-    }
+	.register-lastname-input {
+		font-size: 26px;
+	}
 
-    .register-password-input{
-        font-size:26px;
-    }
+	.register-password-input {
+		font-size: 26px;
+	}
 
-    .register-auth-button{
-        width:12vw;
-    }
+	.register-auth-button {
+		width: 12vw;
+	}
 }
 
-@media(max-width:900px){
-    .register-auth-text{
-        font-size:24px;
-    }
-    .register-auth-button{
-        width:16vw;
-    }
+@media (max-width: 900px) {
+	.register-auth-text {
+		font-size: 24px;
+	}
+	.register-auth-button {
+		width: 16vw;
+	}
 
-    .register-username-input{
-        font-size:22px;
-    }
+	.register-username-input {
+		font-size: 22px;
+	}
 
-    .register-firstname-input{
-        font-size:22px;
-    }
+	.register-firstname-input {
+		font-size: 22px;
+	}
 
-    .register-lastname-input{
-        font-size:22px;
-    }
+	.register-lastname-input {
+		font-size: 22px;
+	}
 
-    .register-password-input{
-        font-size:22px;
-    }
-
+	.register-password-input {
+		font-size: 22px;
+	}
 }
 
-@media(max-width:760px){
-    .register-auth-text{
-        font-size:22px;
-    }
+@media (max-width: 760px) {
+	.register-auth-text {
+		font-size: 22px;
+	}
 
-    .register-username-input{
-        font-size:20px;
-    }
+	.register-username-input {
+		font-size: 20px;
+	}
 
-    .register-firstname-input{
-        font-size:20px;
-    }
+	.register-firstname-input {
+		font-size: 20px;
+	}
 
-    .register-lastname-input{
-        font-size:20px;
-    }
+	.register-lastname-input {
+		font-size: 20px;
+	}
 
-    .register-password-input{
-        font-size:20px;
-    }
+	.register-password-input {
+		font-size: 20px;
+	}
 }
 
-@media(max-width:660px){
-    .register-auth-button{
-        width:30vw;
-    }
-    .register-auth-box{
-        width:80vw;
-    }
-    .register-auth-text{
-        font-size:22px;
-    }
+@media (max-width: 660px) {
+	.register-auth-button {
+		width: 30vw;
+	}
+	.register-auth-box {
+		width: 80vw;
+	}
+	.register-auth-text {
+		font-size: 22px;
+	}
 
-    .register-username-input{
-        font-size:20px;
-        width:28vw;
-    }
+	.register-username-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 
-    .register-firstname-input{
-        font-size:20px;
-        width:28vw;
-    }
+	.register-firstname-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 
-    .register-lastname-input{
-        font-size:20px;
-        width:28vw;
-    }
+	.register-lastname-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 
-    .register-password-input{
-        font-size:20px;
-        width:28vw;
-    }
+	.register-password-input {
+		font-size: 20px;
+		width: 28vw;
+	}
 }

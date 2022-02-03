@@ -1,314 +1,342 @@
-.Home-container-main{
-    width: 100vw;
-    height:100vh;
-    background:linear-gradient(141deg, rgb(148, 148, 148) 25%, rgb(250, 250, 250) 40%, rgb(146, 146, 146) 55%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Home-container-main {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(
+		141deg,
+		rgb(148, 148, 148) 25%,
+		rgb(250, 250, 250) 40%,
+		rgb(146, 146, 146) 55%
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 .escape-container {
-    margin-top: 100px;
-    position: fixed;
-    text-align:center;
-    background:linear-gradient(141deg, rgb(83, 87, 90) 25%, rgb(238, 238, 238) 50%, rgb(209, 209, 209) 55%);
-    color:rgb(0, 0, 0);
-    font-family:'Roboto';
-    font-weight:300;
-    font-size:25px;
-    width:100vw;
-    height:4.5vh;
-    white-space: nowrap;
-    overflow:hidden;
+	margin-top: 100px;
+	position: fixed;
+	text-align: center;
+	background: linear-gradient(
+		141deg,
+		rgb(83, 87, 90) 25%,
+		rgb(238, 238, 238) 50%,
+		rgb(209, 209, 209) 55%
+	);
+	color: rgb(0, 0, 0);
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 25px;
+	width: 100vw;
+	height: 4.5vh;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-.escape-text{
-    display:inline-block;
-    overflow:hidden;
-    white-space:nowrap;
-    margin-right:-40px;
-    margin-left:-120px;
-    margin-top: 5px;
+.escape-text {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-right: -40px;
+	margin-left: -120px;
+	margin-top: 5px;
 }
 
-.escape-2nd-text{
-    display:inline-block;
-    overflow-x:hidden;
-    margin-right:-200px;
+.escape-2nd-text {
+	display: inline-block;
+	overflow-x: hidden;
+	margin-right: -200px;
 }
 
 .escape-text:first-of-type {
-    animation: showup 7s infinite;
+	animation: showup 7s infinite;
 }
 
 .escape-2nd-text:first-of-type {
-    animation: showup 7s infinite;
-    
+	animation: showup 7s infinite;
 }
 
 .escape-text:last-of-type {
-    width:0px;
-    animation: reveal 7s infinite;
-    
+	width: 0px;
+	animation: reveal 7s infinite;
 }
 
 .escape-2nd-text:last-of-type {
-    width:0px;
-    animation: reveal 7s infinite;
+	width: 0px;
+	animation: reveal 7s infinite;
 }
 
 .escape-text:last-of-type span {
-    margin-left:-355px;
-    animation: slidein 7s infinite;
+	margin-left: -355px;
+	animation: slidein 7s infinite;
 }
 
 .escape-2nd-text:last-of-type span {
-    animation: slidein 7s infinite;
+	animation: slidein 7s infinite;
 }
 
 @keyframes showup {
-    0% {opacity:0;}
-    20% {opacity:1;}
-    80% {opacity:1;}
-    100% {opacity:0;}
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes slidein {
-    0% { margin-left:-800px; }
-    20% { margin-left:-800px; }
-    35% { margin-left:0px; }
-    100% { margin-left:0px; }
+	0% {
+		margin-left: -800px;
+	}
+	20% {
+		margin-left: -800px;
+	}
+	35% {
+		margin-left: 0px;
+	}
+	100% {
+		margin-left: 0px;
+	}
 }
 
 @keyframes reveal {
-    0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:355px;}
-    80% {opacity:1;}
-    100% {opacity:0;width:355px;}
+	0% {
+		opacity: 0;
+		width: 0px;
+	}
+	20% {
+		opacity: 1;
+		width: 0px;
+	}
+	30% {
+		width: 355px;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		width: 355px;
+	}
 }
 
 .more-items-button {
-    margin-top:8px;
-    text-align: center;
-    width:14vw;
-    height:4vh;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 0px;
-    display: relative;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 16px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 #000000;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
-
+	margin-top: 8px;
+	text-align: center;
+	width: 14vw;
+	height: 4vh;
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 0px;
+	display: relative;
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 16px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #000000;
+	-webkit-transition: ease-out 0.4s;
+	-moz-transition: ease-out 0.4s;
+	transition: ease-out 0.4s;
 }
 
 .more-items-button:hover {
-    box-shadow: inset 400px 0 0 0 #383838;
-    color: white;
+	box-shadow: inset 400px 0 0 0 #383838;
+	color: white;
 }
 
 .products-home-container {
-    width: 83.2vw;
-    height: 36vh;
-    margin-top:6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border:3px solid black;
-    background-color: rgb(112, 112, 63);
+	width: 83.2vw;
+	height: 36vh;
+	margin-top: 6px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border: 3px solid black;
+	background-color: rgb(112, 112, 63);
 }
 
 .preview-pic1 {
-    width: 41.5vw;
-    height: 350px;
-    margin-top:60px;
-    position: relative;
-    box-shadow: 15px 0 40px rgb(0, 0, 0);
-    border: 2px solid black;
-    margin-left:6px;
+	width: 41.5vw;
+	height: 350px;
+	margin-top: 60px;
+	position: relative;
+	box-shadow: 15px 0 40px rgb(0, 0, 0);
+	border: 2px solid black;
+	margin-left: 6px;
 }
 
 .preview-pic2 {
-    width: 41.5vw;
-    height: 350px;
-    margin-top:60px;
-    position: relative;
-    box-shadow: -15px 0 40px rgb(0, 0, 0);
-    border: 2px solid black;
+	width: 41.5vw;
+	height: 350px;
+	margin-top: 60px;
+	position: relative;
+	box-shadow: -15px 0 40px rgb(0, 0, 0);
+	border: 2px solid black;
 }
 
 .featured-items {
-margin-top:-10px;
-height:5vh;
+	margin-top: -10px;
+	height: 5vh;
 }
 
 .preview-image-container {
-    margin-top:110px;
-    display: flex;
-    justify-content: center;
+	margin-top: 110px;
+	display: flex;
+	justify-content: center;
 }
 
 .featured-products {
-    width:70vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+	width: 70vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 .product-homepage {
-height: 22vh;
-width:26vw; 
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+	height: 22vh;
+	width: 26vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .product-image-feature {
-    width:14vw;
-    outline: 2px dotted red;
+	width: 14vw;
+	outline: 2px dotted red;
 }
 
-.product-name-feature{
-    height:30px;
-    font-size:16px;
-    font-family: "Lucida Console", Monaco, monospace;
-    text-align: center;
+.product-name-feature {
+	height: 30px;
+	font-size: 16px;
+	font-family: 'Lucida Console', Monaco, monospace;
+	text-align: center;
 }
 
-@media(max-width:1300px){
-    .product-name-feature{
-        font-size:13px;
-    }
+@media (max-width: 1300px) {
+	.product-name-feature {
+		font-size: 13px;
+	}
 
-    .product-homepage{
-        gap:10px;
-    }
-
+	.product-homepage {
+		gap: 10px;
+	}
 }
 
-@media(max-width:1030px){
-    .product-name-feature{
-        font-size:10px;
-    }
+@media (max-width: 1030px) {
+	.product-name-feature {
+		font-size: 10px;
+	}
 
-    .product-homepage{
-        width:30vw;
-    }
+	.product-homepage {
+		width: 30vw;
+	}
 
-    .featured-products{
-        gap:20px;
-        width:80vw;
-    }
+	.featured-products {
+		gap: 20px;
+		width: 80vw;
+	}
 
-    .more-items-button{
-        font-size:13px;
-        height:5vh;
-    }
+	.more-items-button {
+		font-size: 13px;
+		height: 5vh;
+	}
 }
 
-@media(max-width:780px){
-    .preview-pic2{
-        height:280px;
-        width:41vw;
-    }
+@media (max-width: 780px) {
+	.preview-pic2 {
+		height: 280px;
+		width: 41vw;
+	}
 
-    .preview-pic1{
-        height:280px;
-        width:41vw;
-    }
+	.preview-pic1 {
+		height: 280px;
+		width: 41vw;
+	}
 
-    .more-items-button{
-        width:18vw;
-    }
+	.more-items-button {
+		width: 18vw;
+	}
 }
 
-@media(max-width:530px){
-    .preview-pic2{
-        height:250px;
-        width:41vw;
-    }
+@media (max-width: 530px) {
+	.preview-pic2 {
+		height: 250px;
+		width: 41vw;
+	}
 
-    .preview-pic1{
-        height:250px;
-        width:41vw;
-    }
+	.preview-pic1 {
+		height: 250px;
+		width: 41vw;
+	}
 
-    .featured-products{
-        gap:10px;
-        flex-wrap: wrap;
-        height:27vh;
-    }
+	.featured-products {
+		gap: 10px;
+		flex-wrap: wrap;
+		height: 27vh;
+	}
 
-    .product-homepage{
-        height:13vh;
-    }
+	.product-homepage {
+		height: 13vh;
+	}
 
-    .product-image-feature{
-        width:20vw;
-    }
-    .more-items-button{
-        width:24vw;
-    }
-    
+	.product-image-feature {
+		width: 20vw;
+	}
+	.more-items-button {
+		width: 24vw;
+	}
 
-    .escape-text{
-    
-        margin-right:-60px;
-        margin-left:-100px;
-        
-    }
-    
+	.escape-text {
+		margin-right: -60px;
+		margin-left: -100px;
+	}
 
-
-    .escape-container {
-
-        font-size:20px;
-    }
-    
+	.escape-container {
+		font-size: 20px;
+	}
 }
 
-@media(max-width:450px){
-    .preview-pic2{
-        height:135px;
-        width:84vw;
-        margin-top:40px;
-        margin-left:0;
-    }
+@media (max-width: 450px) {
+	.preview-pic2 {
+		height: 135px;
+		width: 84vw;
+		margin-top: 40px;
+		margin-left: 0;
+	}
 
-    .preview-pic1{
-        margin-top:4px;
-        height:130px;
-        width:84vw;
-        margin-left:0;
-    }
+	.preview-pic1 {
+		margin-top: 4px;
+		height: 130px;
+		width: 84vw;
+		margin-left: 0;
+	}
 
-    .preview-image-container{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+	.preview-image-container {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-    .Home-container-main{
-        gap:0px;
-    }
+	.Home-container-main {
+		gap: 0px;
+	}
 
-    .more-items-button{
-        margin-top:5px;
-        width:40vw;
-        height:3vh;
-    }
+	.more-items-button {
+		margin-top: 5px;
+		width: 40vw;
+		height: 3vh;
+	}
 
-    .escape-container{
-        font-size:19px;
-    }
+	.escape-container {
+		font-size: 19px;
+	}
 }
